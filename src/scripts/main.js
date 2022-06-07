@@ -1,11 +1,14 @@
 import { createPlan } from "./plan.js"
+import { plantSeeds } from "./tractor.js"
+import { usePlants } from "./field.js"
+import { harvestPlants } from "./harvester.js"
+import { Catalog } from "./catalog.js"
 
 const yearlyPlan = createPlan()
 
-console.log(yearlyPlan)
+plantSeeds(yearlyPlan)
 
-// temp test ConvolverNode. TODO: delete later
-import { createAsparagus } from "./seeds/asparagus.js"
+const plants = usePlants()
+const harvest = harvestPlants(plants)
 
-const asparagusSeed = createAsparagus()
-console.log(asparagusSeed)
+Catalog(harvest)
